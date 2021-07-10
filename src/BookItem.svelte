@@ -5,8 +5,8 @@
   export let subtitle;
   export let authors;
 
-  const notion = new Client({ auth: process.env.NOTION_API_KEY });
-  const databaseId = process.env.NOTION_DATABASE_ID;
+  const notion = new Client({ auth: __myapp.env.NOTION_API_KEY });
+  const databaseId = __myapp.env.NOTION_DATABASE_ID;
 
   const handleBookSelect = () => {
     notion.request({

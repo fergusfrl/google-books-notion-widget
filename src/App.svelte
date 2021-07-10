@@ -21,7 +21,7 @@ import BookItem from "./BookItem.svelte";
 	{#await books}
 		<p>searching...</p>
 	{:then bookList}
-		{#if bookList}
+		{#if bookList && bookList.items}
 			{#each bookList.items as { volumeInfo: { title, subtitle, authors } }}
 				<BookItem title={title} subtitle={subtitle} authors={authors} />
 			{/each}
