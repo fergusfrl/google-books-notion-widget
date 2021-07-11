@@ -1,18 +1,17 @@
 <script>
 import BookItem from "./BookItem.svelte";
-
-	const searchBooks = async () => {
-		return await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=5`)
-			.then(res => res.json());
-	}
-
-	let searchTerm = 'this is going to hurt';
-	let books = searchBooks();
+	let searchTerm;
+	let books;
 
 	const handleSearch = (e) => {
 		e.preventDefault();
 		books = searchBooks();
 	};
+
+	const searchBooks = async () => {
+		return await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=5`)
+			.then(res => res.json());
+	}
 </script>
 
 <main>

@@ -1,6 +1,4 @@
 <script>
-import App from "./App.svelte";
-
   export let title;
   export let subtitle;
   export let authors;
